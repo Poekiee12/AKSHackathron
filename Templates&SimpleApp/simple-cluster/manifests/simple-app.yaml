@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-app
+  namespace: hackathon-aks
+  labels:
+    app: simple-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-app
+  template:
+    metadata:
+      labels:
+        app: simple-app
+    spec:
+      containers:
+      - name: wortell-simple-app
+        image: testaksclusterrobert.azurecr.io/wortellhackaton/simple-app
+        ports:
+        - containerPort: 3000

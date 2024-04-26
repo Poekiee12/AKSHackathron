@@ -1,0 +1,10 @@
+This simple cluster folder contains:
+
+- Bicep file to build a simple ACR with public access enabled and admin credentials enabled.
+- Bicep file to build a simple K8s cluster with AKS, public available and set up using local K8s accounts.
+- A docker pipeline for Azure DevOps, building & pushing the image to a Container Registry.
+- K8s Manifests to deploy both the 'simple-app' and the service (LB), the LB facilitates the actual exposure of the app from the cluster.
+
+
+### Azure DevOps
+In order to get the pipeline to work, a service connection needs to be created. When creating the Service Connection, choose for the type 'Other registry' in order to skip the SPN validation.
